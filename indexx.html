@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> BREW CABIN </title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div id="toast-container"></div>
+
+    <header class="header">
+        <div class="header-logo"> BREW CABIN </div>
+        <button id="cart-toggle-btn" class="cart-toggle-btn" aria-label="Open Cart">
+            🛒 Cart (<span id="cart-count">0</span>)
+        </button>
+    </header>
+
+    <main class="menu-grid" id="menu-container">
+        </main>
+
+    <aside id="side-cart" class="side-cart">
+        <div class="cart-header">
+            <h3>Your Order</h3>
+            <button id="close-cart-btn" class="close-cart-btn">&times;</button>
+        </div>
+        <div id="cart-items-container" class="cart-items-container">
+            <p class="empty-cart-message">Your cart is currently empty. Start by adding a delicious item!</p>
+        </div>
+        <div class="cart-summary">
+            <div class="summary-line">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">₹0.00</span>
+            </div>
+            <button id="checkout-btn" class="checkout-btn" disabled>Proceed to Checkout</button>
+        </div>
+    </aside>
+
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal-btn" class="close-modal-btn">&times;</span>
+            <div id="checkout-success-state" class="checkout-success-state">
+                <div class="success-icon">✨</div>
+                <h2>Order Placed Successfully!</h2>
+                <p>Your café order is being prepared. Thank you!</p>
+                <button id="print-receipt-btn" class="print-receipt-btn">Print / Save Receipt</button>
+            </div>
+
+            <div id="checkout-billing-state">
+                <h2>Billing Summary</h2>
+                <div class="billing-items" id="billing-items-container">
+                    </div>
+                
+                <div class="coupon-section">
+                    <input type="text" id="coupon-input" placeholder="Enter coupon code" class="coupon-input">
+                    <button id="apply-coupon-btn" class="apply-coupon-btn">Apply</button>
+                </div>
+
+                <div class="billing-totals">
+                    <div class="total-line"><span>Subtotal:</span> <span id="billing-subtotal">₹0.00</span></div>
+                    <div class="total-line discount-line"><span>Discount:</span> <span id="billing-discount">- ₹0.00</span></div>
+                    <div class="total-line gst-line"><span>GST (5%):</span> <span id="billing-gst">₹0.00</span></div>
+                    <hr>
+                    <div class="total-line final-total"><span>Final Total:</span> <span id="billing-final-total">₹0.00</span></div>
+                </div>
+
+                <button id="place-order-btn" class="place-order-btn">Place Order</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-backdrop" class="modal-backdrop"></div>
+</body>
+</html>
