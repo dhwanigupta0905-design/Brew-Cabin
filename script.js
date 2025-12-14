@@ -48,7 +48,7 @@ const elements = {
     applyCouponBtn: document.getElementById('apply-coupon-btn'),
     placeOrderBtn: document.getElementById('place-order-btn'),
     printReceiptBtn: document.getElementById('print-receipt-btn'),
-    emptyCartMessage: document.querySelector('.empty-cart-message')
+    
 };
 
 
@@ -139,7 +139,12 @@ function renderCart() {
     
     
     if (cart.length === 0) {
-        elements.cartItemsContainer.innerHTML = elements.emptyCartMessage.outerHTML;
+        elements.cartItemsContainer.innerHTML = `
+    <p class="empty-cart-message">
+        Your cart is currently empty. Start by adding a delicious item!
+    </p>
+        `;
+
         elements.checkoutBtn.disabled = true;
         elements.checkoutBtn.style.opacity = '0.7';
         return;
@@ -384,4 +389,5 @@ function init() {
 }
 
 // Start the application
+
 init();
